@@ -10,7 +10,7 @@ services:
       - portainer_data:/data
     environment:
       - VIRTUAL_HOST=portainer.unklab.id
-      - VIRTUAL_PORT=9000
+      - VIRTUAL_PORT=443
 
 volumes:
   portainer_data:
