@@ -1,16 +1,17 @@
 services:
   portainer:
     image: portainer/portainer-ce:latest
+    pull_policy: always
     container_name: portainer
-    restart: always
+    restart: unless-stopped
     ports:
-      - "9000:9000"
+      - "64112:9000"
+      - "64113:8000"
+    environment:
+      - TRUSTED_ORIGINS=portainer.unklab.id
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
-    environment:
-      - VIRTUAL_HOST=portainer.unklab.id
-      - VIRTUAL_PORT=443
 
 volumes:
   portainer_data:
