@@ -1,6 +1,7 @@
 services:
   portainer:
     image: portainer/portainer-ce:latest
+    pull_policy: always
     container_name: portainer
     restart: always
     ports:
